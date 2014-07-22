@@ -13,6 +13,8 @@ So what do you need to do? This...
 $('.my-container').peephole();
 ```
 
+Demo http://codepen.io/Jshthornton/pen/gcEAF
+
 peephole is a jQuery plugin which can be defined either as its own script element or via AMD. It has several options that can be passed into it to control how it operates:
 
 `opts.elSelector` controls how to find the image in the container. Defaults to `> img`. Takes any form of jQuery selector (set to the containers context).
