@@ -29,6 +29,8 @@ peephole is a jQuery plugin which can be defined either as its own script elemen
 
 `opts.useClasses` controls if state classes should be added to the container to allowing for stateful styling. Such states are `.is-loading` and `.is-scaled`. Defaults to `true`. Accepts a boolean.
 
+`opts.alignOnError` controls if peephole should still align the image if it errors (for some reason like 404). Defaults to `true`. Accepts a boolean.
+
 These options are passed in on invoke. Example: `$container.peephole({ upscale: false });`
 
 ### When to not use this
