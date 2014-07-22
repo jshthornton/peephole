@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+
+	<style>
+		body {
+			background-color: blue;
+		}
+		.con {
+			width: 160px;
+			height: 90px;
+			overflow: hidden;
+
+			margin-top: 100px;
+			background-color: red;
+		}
+
+		.con img {
+			visibility: hidden;
+		}
+		.con.is-scaled img {
+			visibility: visible;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="con">
+		<img src="http://i.imgur.com/N1bba0S.jpg">
+	</div>
+
+	<div class="con">
+		<img src="http://www.law.unimelb.edu.au/staff/events/images/Julian%20Small%202011%2060%20x%2060.jpg">
+	</div>
+	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="../src/peephole.js"></script>
+
+	<script>
+	$(function() {
+		$('.con').peephole();
+	});
+	</script>
+</body>
+</html>
