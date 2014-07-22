@@ -69,7 +69,7 @@
 				if($el.prop('complete') === true) {
 					align.call($el[0]);
 				} else {
-					$el.on('load', align);
+					$el.on('load.peephole', align);
 				}
 			} else {
 				align();
