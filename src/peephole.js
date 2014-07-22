@@ -8,7 +8,8 @@
 			center: true,
 			upscale: true,
 			downscale: true,
-			useClasses: true
+			useClasses: true,
+			alignOnError: true
 		}, opts);
 
 		return this.each(function() {
@@ -70,6 +71,9 @@
 					align.call($el[0]);
 				} else {
 					$el.on('load.peephole', align);
+					if(opts.alignOnError === true) {
+						$el.on('error.peephole', align);
+					}
 				}
 			} else {
 				align();
