@@ -30,3 +30,6 @@ peephole is a jQuery plugin which can be defined either as its own script elemen
 `opts.useClasses` controls if state classes should be added to the container to allowing for stateful styling. Such states are `.is-loading` and `.is-scaled`. Defaults to `true`. Accepts a boolean.
 
 These options are passed in on invoke. Example: `$container.peephole({ upscale: false });`
+
+## When to not use this
+Whilst this script is small and does not take up many resources it still adds overhead. This script should not be used if there is a pure CSS alternative which does not affect accessibility (background-image + background-size solutions).
