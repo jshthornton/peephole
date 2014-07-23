@@ -9,7 +9,8 @@
 			upscale: true,
 			downscale: true,
 			useClasses: true,
-			alignOnError: true
+			alignOnError: true,
+			reset: true
 		}, opts);
 
 		return this.each(function() {
@@ -19,8 +20,18 @@
 				containerHeight = $container.height();
 
 			function align() {
-				var $el = $(this),
-					width = $el.width(),
+				var $el = $(this);
+
+				if(opts.reset === true) {
+					$el.css({
+						'width': '',
+						'height': '',
+						'margin-left': '',
+						'margin-top': ''
+					});
+				}
+
+				var width = $el.width(),
 					height = $el.height(),
 					newWidth,
 					newHeight;
@@ -63,16 +74,23 @@
 			}
 
 			if(opts.useClasses === true) {
+				if(opts.reset === true) {
+					$container.removeClass('is-scaled');
+				}
 				$container.addClass('is-loading');
+			}
+
+			if(opts.reset === true) {
+				$el.off('load.peephole error.peephole');
 			}
 
 			if($el.prop('nodeName') === 'IMG') {
 				if($el.prop('complete') === true) {
 					align.call($el[0]);
 				} else {
-					$el.on('load.peephole', align);
+					$el.one('load.peephole', align);
 					if(opts.alignOnError === true) {
-						$el.on('error.peephole', align);
+						$el.one('error.peephole', align);
 					}
 				}
 			} else {
