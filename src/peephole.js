@@ -23,12 +23,15 @@
 				var $el = $(this);
 
 				if(opts.reset === true) {
-					$el.css({
-						'width': '',
-						'height': '',
-						'margin-left': '',
-						'margin-top': ''
-					});
+					$el
+						.removeAttr('width')
+						.removeAttr('height')
+						.css({
+							'width': '',
+							'height': '',
+							'margin-left': '',
+							'margin-top': ''
+						});
 				}
 
 				var width = $el.width(),
